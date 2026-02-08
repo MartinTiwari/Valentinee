@@ -1,0 +1,367 @@
+/* ================= TIMELINE CORE ================= */
+/* ================= GLOBAL RESET ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.timeline-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #1a0b12, #2a0f1c);
+  color: white;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #f472b6;
+  padding: 3.5rem 0;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 8rem;
+}
+
+/* center vertical line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(244, 114, 182, 0.35);
+  transform: translateX(-50%);
+}
+
+/* timeline item */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+/* center dot */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: #facc15;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+}
+
+/* card alignment */
+.timeline-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* left / right */
+.timeline-left {
+  margin-right: auto;
+  text-align: right;
+}
+
+.timeline-right {
+  margin-left: auto;
+  text-align: left;
+}
+
+/* image wrapper (THIS FIXES BIG IMAGE ISSUE) */
+.timeline-image-box {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* text */
+.timeline-title-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #f9a8d4;
+}
+
+/* ================= ANIMATION ================= */
+
+.timeline-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.timeline-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s ease-out;
+}
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-card {
+    margin-left: 50px !important;
+    text-align: left !important;
+  }
+}
+@keyframes confetti {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.animate-confetti {
+  animation: confetti 3s linear infinite;
+}
+/* ================= INTRO PAGE ================= */
+
+.intro-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #ffe4ec, #fff0f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-card {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 24px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ec4899;
+  margin-bottom: 1.25rem;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.intro-btn {
+  background: #ec4899;
+  color: white;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.intro-btn:hover {
+  background: #db2777;
+  transform: scale(1.05);
+}
+/* ================= TIMELINE NEXT BUTTON (FIXED) ================= */
+
+.timeline-next-wrapper {
+  position: relative;
+  margin-top: 6rem;
+  padding-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-next-btn {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  color: white;
+  border: none;
+  padding: 1rem 3.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  box-shadow: 0 25px 50px rgba(236, 72, 153, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-next-btn:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 35px 70px rgba(236, 72, 153, 0.65);
+}
+/* ================= QUESTION PAGE ================= */
+
+.question-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #fff7ed, #ffe4e6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-card {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
+  max-width: 500px;
+  width: 100%;
+}
+
+.question-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ec4899;
+  margin-bottom: 3rem;
+}
+
+.question-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+}
+
+/* YES BUTTON */
+.question-yes {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.question-yes:hover {
+  transform: scale(1.12);
+  box-shadow: 0 30px 60px rgba(236, 72, 153, 0.65);
+}
+
+/* NO BUTTON (RUN AWAY 😈) */
+.question-no {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+/* ================= FINAL PAGE ================= */
+
+.final-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #fb7185, #be123c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.final-card {
+  background: white;
+  padding: 4.5rem 3.5rem;
+  border-radius: 32px;
+  text-align: center;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.35);
+  max-width: 520px;
+  width: 100%;
+  z-index: 2;
+}
+
+.final-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #be123c;
+  margin-bottom: 1.5rem;
+}
+
+.final-text {
+  font-size: 1.3rem;
+  color: #374151;
+  line-height: 1.8;
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 16px;
+  background: white;
+  opacity: 0.9;
+  animation: confetti-fall linear infinite;
+}
+
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
