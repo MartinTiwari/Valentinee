@@ -77,15 +77,14 @@ function Intro({ onNext }: { onNext: () => void }) {
   return (
     <div className="intro-wrapper">
       <div className="intro-card">
-        <h1 className="intro-title">Sun Gajedi 💖</h1>
+        <h1 className="intro-title">hmmmm😁</h1>
 
         <p className="intro-text">
-          aba aruko dekhda dekhda banauna manlagyo so
-           let’s begin 🌸
+           Let’s begin 🌸😁
         </p>
 
         <button className="intro-btn" onClick={onNext}>
-          Yaha thich 💌
+          Yeta thichaaa😁😁
         </button>
       </div>
     </div>
@@ -98,10 +97,11 @@ function Intro({ onNext }: { onNext: () => void }) {
 
 function Timeline({ onNext }: { onNext: () => void }) {
   const items = [
-    { image: image1, title: "The day we first met 💫", date: "2024/05/07" },
-    { image: image2, title: "Moments that changed everything ❤️", date: "Sukenass" },
-    { image: image3, title: "Memories I’ll never forget ✨", date: "Always" },
-    { image: image4, title: "Our story continues 💖", date: "Forever" },
+    { image: image1, title: "Our First date😁? " },
+    { image: image2, title: " ❤️" },
+    { image: image3, title: "😁", date: "Alwayssss😁" },
+    { image: image4, title: "😘", date: "😁" },
+    
   ]
 
   return (
@@ -138,7 +138,7 @@ function Timeline({ onNext }: { onNext: () => void }) {
 
       <div className="timeline-next-wrapper">
         <button className="timeline-next-btn" onClick={onNext}>
-          One Last Question 💖
+          One Last Question 😁💖
         </button>
       </div>
     </div>
@@ -162,8 +162,8 @@ function Question({ onYes }: { onYes: () => void }) {
     <div className="question-wrapper">
       <div className="question-card">
         <h2 className="question-title">
-          Chatak ta dekhauna parihalyo hallayeraa
-          SO, Will you be my Valentine? 💘
+          Aba Valentine cringe lagcha ta bhani hale teini....
+         Will you be my Valentine??😁
         </h2>
 
         <div className="question-buttons">
@@ -208,12 +208,10 @@ function Final() {
 
       {/* CARD */}
       <div className="final-card">
-        <h1 className="final-title">YAYYYYYYYY 💖🎉</h1>
+        <h1 className="final-title">YAYYYYYYYY 💖😁🎉</h1>
 
         <p className="final-text">
-          Thichesi ta YES bhaihalyoni 😂  
-          Teinii, Thank you for being my Valentine.  
-          This moment means more to me than you know ra 2 barsa ni huna lagyoo ✨
+          Milan loves you dherai nai!!😁😁
         </p>
       </div>
     </div>
@@ -221,3 +219,9 @@ function Final() {
 }
 
 
+// sabai kura yaha edit gar
+//aru sav done 
+//image yaha haal ani
+// yo sabai case sensetive huncha so sabai small ma lekh capital mandaina
+//lalaa
+//start garna lai new terminal ani "NPM RUN DEV"
